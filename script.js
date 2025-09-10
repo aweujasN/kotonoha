@@ -1,35 +1,42 @@
 const wordData = [
     {
-        kotoba: "とび",
-        imi: "鳶　鴟（ふくろうとも）　鵄　鵈<br>とんび。カラスより一回り大きい猛禽。翼開長160cm。動物や魚をスカベンジャー。腐った肉だけじゃなくてねずみ等の小型の生物も食べる。たかを生むことは殆ど無い。<br>鵈をみさごと読む地名があるのは、昔誰かが写し間違えた。",
+        kotoba: "かわせみ<br>翡翠　翡　翠　鷸<br>魚狗　水狗　魚虎　川蟬",
+        imi: "翡は雄、翠は雌。鷸はしぎ、魚虎はハリセンボンとも。<br>翼はサファイヤの如き美しい碧色、胸はマンダリンガーネットのような鮮やかな橙色で飾られた、翔ぶ宝石。ネプチュナイトの嘴で水中の獲物を攫う。雌は下嘴もマンダリンガーネット。<br><br><i>”なんてことだ、私はおかしくなってしまった</i>”<br><i>”Holy cow, the jewel's playing with the water's surface.”</i><br><br>意外と土の崖地に横穴を掘って営巣するタイプの翡翠。大きな獲物は叩きつけて骨を砕いてから呑み込む。消化出来なかったものは吐く。意外とエグいタイプの翡翠。色鮮やかっつっても絵の具を塗ったようなアイツ（鴛）とは品が違うんだよ品が。",
+        gazo: ["gazo/kawasemi1.jpg","gazo/kawasemi2.jpg"],
+        tagu: ["鳥"],
+        hiduke: "2025-09-10"
+    },
+    {
+        kotoba: "とび　鳶　鴟　鵄　鵈",
+        imi: "鴟はふくろうとも。<br>とんび。烏より一回り大きい猛禽。翼開長160cm。動物や魚をスカベンジャー。腐った肉だけじゃなくて鼠などの小型の生物も食べる。鷹を生むことは殆ど無い。<br>鵈をみさごと読む地名があるのは、昔誰かが写し間違えた。",
         gazo: ["gazo/tobi.jpg","gazo/nynerutobi.jpg"],
         tagu: ["鳥"],
         hiduke: "2025-09-10"
     },
     {
-        kotoba: "ふくろう　鴟",
-        imi: "梟　鴟（とびとも）　鴞<br>森の哲学者、森の忍者。日本でふくろうというと大体ウラルフクロウ。全長60cm、翼開長100cm。<br>夜行性でねずみをよく食べる。みみずくと違い、頭が丸っこい。ホーホーホー。",
+        kotoba: "ふくろう　梟　鴟　鴞",
+        imi: "鴟はとびとも。<br>森の哲学者、森の忍者。日本で梟というと大体ウラルフクロウ。全長60cm、翼開長100cm。<br>夜行性で鼠をよく食べる。木菟と違い、頭が丸っこい。ホーホーホー。",
         gazo: ["gazo/uralfukurou.jpg"],
         tagu: ["鳥"],
         hiduke: "2025-09-10"
     },
     {
-        kotoba: "みみずく",
-        imi: "木兎　耳木兎　鵩　鶹　鵂　角鴟(かくし)　鴟鵂(しきゅう)<br>古名ツク、ズク。羽角（耳に見える羽毛）があるふくろう。鷲木菟の枝木に立つ姿たるや、勇ましく美しく萌え。冬の季語",
+        kotoba: "みみずく　鵩　鶹　鵂<br>木菟　木兎　耳木兎",
+        imi: "角鴟(かくし)　鴟鵂(しきゅう)　鴟はとび・ふくろうの総称。<br>古名ツク、ズク。羽角（耳に見える羽毛）がある梟。鷲木菟の枝木にすらりと立つ姿たるや、勇ましく美しく萌え。冬の季語",
         gazo: ["gazo/wasimimizuku.jpg"],
         tagu: ["鳥"],
         hiduke: "2025-09-10"
     },
     {
         kotoba: "みさご　雎　鶚　鵃",
-        imi: "雎　鶚　鵃　雎鳩(ショキュウ)　魚鷹(うおたか)　Osprey<br>魚を好んで食べるタカ科の鳥。爬虫類、鳥類、貝類を食べることもある。全長60cm、翼開長180cm、体重1.5kg。<br>主に海岸に生息するが、湖沼や河沿など内陸部にも生息。<br>水面をゆっくりと低空飛行し、獲物を見つけると素早く翼を羽ばたかせてホバリング、急降下、水面近くで脚を伸ばし両足で獲物を捕らえる。夫婦仲が良い例えにも。おしどりより大人な恋愛してそう。<br>鷙鳥百を累ぬるも一鶚に如かず：無能な人間が沢山いても有能な人間一人には敵わない。営業会社とか将にそんな感じ。<br>(鷙鳥(シチョウ)：鷙(あらどり)。わしやたかなどの猛鳥の総称)",
+        imi: "雎鳩(ショキュウ)　魚鷹(うおたか)　Osprey<br>魚を好んで食べるタカ科の鳥。爬虫類、鳥類、貝類を食べることもある。全長60cm、翼開長180cm、体重1.5kg。<br>主に海岸に生息するが、湖沼や河沿など内陸部にも生息。<br>水面をゆっくりと低空飛行し、獲物を見つけると素早く翼を羽ばたかせてホバリング、急降下、水面近くで脚を伸ばし両足で獲物を捕らえる。夫婦仲の良い例えにも。鴛鴦より大人な恋愛してそう。<br>鷙鳥百を累ぬるも一鶚に如かず：無能な人間、有象無象が沢山いても有能な人間一人には敵わない。素質が違うんだよ素質が。会社とか将にそんな感じ。<br>鷙鳥(シチョウ)：鷙(あらどり)。鷲や鷹などの猛鳥の総称。",
         gazo: ["gazo/misago1.jpg","gazo/misago2.webp","gazo/misago3.jpg"],
         tagu: ["鳥","夫婦"],
         hiduke: "2025-09-09"
     },
     {
-        kotoba: "おしどり",
-        imi: "鴛鴦(おしどり、エンオウ)　鴛(おしどり(雄))　鴦(おしどり(雌))<br>ロシア南東部、朝鮮半島、日本、中国などの東アジアに分布。全長48cmくらい。<br>オスはパレットみたいな色合いで前衛的。繁殖期になると首周りがフォルムチェンジする。メスは地味。常に一緒にいる仲睦まじい男女に喩える。",
+        kotoba: "おしどり　鴛鴦　鴛　鴦",
+        imi: "鴛は雄、鴦は雌。<br>ロシア南東部、朝鮮半島、日本、中国などの東アジアに分布。全長48cmくらい。<br>雄は男子小学生の洗われないパレットみたいな色合いで前衛的。繁殖期になると首周りがフォルムチェンジする。雌は地味。くっついて離れない2匹は宛ら仲睦まじい夫婦のよう。鴛鴦之契。",
         gazo: ["gazo/oshidoriosumesu.jpg"],
         tagu: ["鳥","夫婦"],
         hiduke: "2025-09-09"
@@ -37,11 +44,10 @@ const wordData = [
     {
         kotoba: "光栄",
         imi: "こうえい。",
-        gazo: [],
+        gazo: [""],
         tagu: [],
         hiduke: "2001-05-30"
     }
-
 ];
 
 // ページの読み込みが完了したら実行
@@ -94,15 +100,20 @@ function createWordEntryElement(data, entryId) {
 function findAndReplaceWithLinks(element, currentTerm) {
     const linkableTerms = [];
     const tempDiv = document.createElement('div');
+
     wordData.forEach(linkTargetEntry => {
         if (linkTargetEntry.kotoba === currentTerm) return;
-        tempDiv.innerHTML = linkTargetEntry.kotoba;
-        const plainTerm = tempDiv.textContent;
+        
+        // ★ 修正点: textContentではなく、innerHTMLからタグを取り除く方式に変更
+        const plainTerm = linkTargetEntry.kotoba.replace(/<rt>.*?<\/rt>/g, '').replace(/<[^>]*>/g, '');
+        
         plainTerm.split(/[\s　]+/).filter(p => p).forEach(part => {
             linkableTerms.push({ text: part, originalTerm: linkTargetEntry.kotoba });
         });
     });
+
     linkableTerms.sort((a, b) => b.text.length - a.text.length);
+    
     const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
     const nodesToProcess = [];
     while (walker.nextNode()) {
@@ -111,13 +122,16 @@ function findAndReplaceWithLinks(element, currentTerm) {
             nodesToProcess.push(walker.currentNode);
         }
     }
+    
     nodesToProcess.forEach(node => {
         const text = node.nodeValue;
         const fragment = document.createDocumentFragment();
         let lastIndex = 0;
+
         for (let i = 0; i < text.length; i++) {
             const remainingText = text.substring(i);
             const matchedLink = linkableTerms.find(link => remainingText.startsWith(link.text));
+            
             if (matchedLink) {
                 if (i > lastIndex) {
                     fragment.appendChild(document.createTextNode(text.substring(lastIndex, i)));
@@ -127,13 +141,16 @@ function findAndReplaceWithLinks(element, currentTerm) {
                 linkNode.dataset.term = matchedLink.originalTerm;
                 linkNode.textContent = matchedLink.text;
                 fragment.appendChild(linkNode);
+                
                 i += matchedLink.text.length - 1;
                 lastIndex = i + 1;
             }
         }
+        
         if (lastIndex < text.length) {
             fragment.appendChild(document.createTextNode(text.substring(lastIndex)));
         }
+        
         if (fragment.childNodes.length > 1 || (fragment.firstChild && fragment.firstChild.nodeType !== Node.TEXT_NODE)) {
             node.parentNode.replaceChild(fragment, node);
         }
@@ -163,22 +180,17 @@ function displayWords(words) {
 function setupEventListeners() {
     const container = document.getElementById('word-container');
     const searchBox = document.getElementById('search-box');
-
-    // ステップ1でコピーしたウェブアプリのURLをここに貼り付け
     const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzyQf_iow0vedp-EL1_49utcNZfaXmgDAZeDXBbJpF2lItKX_2ozBl3PxSY6mvzn1R_/exec';
 
     searchBox.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
             const query = event.target.value.trim().toLowerCase();
 
-            // サーバーに検索キーワードを送信
             if (query && WEB_APP_URL) {
                 fetch(WEB_APP_URL, {
                     method: 'POST',
-                    mode: 'no-cors', // CORSエラーを回避するため
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
+                    mode: 'no-cors',
+                    headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({ query: query }),
                 })
                 .catch(error => console.error('Error:', error));
@@ -271,7 +283,4 @@ function createTagButton(text) {
 function updateActiveButton(activeBtn) {
     document.querySelectorAll('.tag-btn').forEach(btn => btn.classList.remove('active'));
     activeBtn.classList.add('active');
-
 }
-
-
