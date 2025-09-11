@@ -8,7 +8,7 @@ const wordData = [
     },
     {
         kotoba: "かいつぶり　鸊鷉",
-        imi: "鸊鷉(ヘキテイ)　鷸子(つぶり)。鳰は古名。<br>全体的に焦茶色がかった消炭色。首は季節で羽色が変わり、夏は暗い赤茶色、冬は黄茶色になる。翼開長40cm強、<br>殆ど水上生活で、潜水して魚、虫、甲殻類、貝などの獲物を捕える。1回に15秒、長いと30秒も潜水するが水深は2mまで。滋賀県の県鳥。",
+        imi: "鸊鷉(ヘキテイ)　鷸子(つぶり)。鳰は古名。<br>全体的に焦茶色がかった消炭色。首は季節で羽色が変わり、夏は暗い赤茶色、冬は黄茶色になる。<br>翼開長40cm強。ほぼ水上生活で、潜水して魚、虫、甲殻類、貝などの獲物を捕える。1回の潜水は平均15秒くらい、長いと30秒になるが水深は2mまで。滋賀県の県鳥。",
         gazo: ["gazo/kaitsuburi.jpg"],
         tagu: ["鳥"],
         hiduke: "2025-09-11"
@@ -310,4 +310,5 @@ function createTagButton(text) {
 function updateActiveButton(activeBtn) {
     document.querySelectorAll('.tag-btn').forEach(btn => btn.classList.remove('active'));
     activeBtn.classList.add('active');
+
 }
