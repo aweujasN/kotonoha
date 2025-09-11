@@ -8,12 +8,13 @@ body {
 
 /* ヘッダーのスタイル */
 header {
-    text-align: center;
+    display: flex; /* ★ 横並びレイアウトに変更 */
+    justify-content: space-between; /* ★ 両端に寄せる */
+    align-items: center; /* ★ 上下中央揃え */
     margin-bottom: 30px;
     border-bottom: 2px solid #ccc;
     padding-bottom: 10px;
     font-family: "Yuji Kyokasho", serif;
-    position: relative; /* 検索ボックスの基準位置 */
 }
 
 header h1 {
@@ -21,12 +22,24 @@ header h1 {
     color: #333;
 }
 
-/* 検索ボックスのコンテナ */
+/*  単語数と検索ボックスをまとめるコンテナのスタイル */
+.header-controls {
+    display: flex;
+    align-items: center;
+}
+
+/*  単語数表示のスタイル */
+#word-count-display {
+    margin-right: 15px;
+    font-size: 0.9em;
+    color: #555;
+    white-space: nowrap; /* 折り返しを防ぐ */
+}
+
+/* 検索ボックスのコンテナのスタイルをリセット */
 .search-container {
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
+    position: static;
+    transform: none;
 }
 
 /* 検索ボックス本体のスタイル */
@@ -54,13 +67,12 @@ header h1 {
 .word-details {
     flex: 3;
     display: flex;
-    align-items: baseline; /* テキストのベースラインを揃える */
+    align-items: baseline;
 }
 
 /* 単語と日付をまとめる左側の列 */
 .term-column {
     flex: 1;
-    padding-right: 20px;
 }
 
 /* 単語のスタイル */
@@ -81,8 +93,8 @@ header h1 {
 .word-definition {
     flex: 2;
     line-height: 1.6;
-    font-size: 1.2em;
-    padding-top: 5px; /* 上部の余白を微調整 */
+    font-size: 1.0em;
+    padding-top: 5px;
     font-family: "Yuji Kyokasho", serif;
 }
 
@@ -121,6 +133,7 @@ header h1 {
     border: 1px solid #eee;
     margin-top: 10px;
 }
+
 
 /* --- タグ関連のスタイル --- */
 #tag-container {
@@ -164,41 +177,46 @@ header h1 {
 
 /* --- レスポンシブデザイン（スマホ対応） --- */
 @media (max-width: 768px) {
+
     body {
         padding: 10px;
     }
 
-    /* ヘッダーのスタイルを上書き */
+    /* ヘッダーを縦積みに */
     header {
-        position: static;
-        padding-bottom: 20px;
+        flex-direction: column;
     }
-    .search-container {
-        position: static;
-        transform: none;
+    
+    .header-controls {
         margin-top: 15px;
         width: 100%;
+        justify-content: center;
     }
+
     #search-box {
-        width: 90%;
+        width: 150px; /* スマホでは少し幅を調整 */
     }
 
     .word-entry {
         flex-direction: column;
         align-items: flex-start;
     }
+
     .word-details {
         flex-direction: column;
         width: 100%;
-        align-items: flex-start; /* ベースライン揃えを解除 */
+        align-items: flex-start;
     }
+    
     .term-column {
         padding-right: 0;
         margin-bottom: 15px;
     }
+    
     .word-definition {
         padding-top: 0;
     }
+
     .word-image {
         width: 100%;
         margin-top: 20px;
