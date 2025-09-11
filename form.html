@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>言葉登録フォーム</title>
+    <link rel="stylesheet" href="form.style.css">
+    <link rel="stylesheet" href="style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Yuji+Kyokasho&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <h1>言葉登録フォーム</h1>
+
+    <div class="container">
+        <div class="form-container">
+            <div class="form-group">
+                <label for="kotoba">言葉</label>
+                <textarea id="kotoba" rows="3" placeholder="言葉　ことば　ことのは"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="imi">意味</label>
+                <textarea id="imi" rows="8" placeholder="ことのはは大和言葉。..."></textarea>
+            </div>
+            <div class="form-group">
+                <label for="gazo">写真</label>
+                <textarea id="gazo" rows="3" placeholder="1行に1ファイル名.jpg"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="tagu">タグ</label>
+                <input type="text" id="tagu" placeholder="カンマで, 区切って">
+            </div>
+            
+            <button id="generate-btn">コードを生成</button>
+            <button id="save-draft-btn">下書き保存</button>
+        </div>
+
+        <div class="output-area">
+            <h2>プレビュー</h2>
+            <div id="preview-output">
+                </div>
+
+            <div class="tab-container">
+                <button class="tab-btn active" data-tab="code">生成コード</button>
+                <button class="tab-btn" data-tab="draft">下書き</button>
+            </div>
+            
+            <div id="code-content" class="tab-content active">
+                <textarea id="code-output" rows="15"></textarea>
+            </div>
+
+            <div id="draft-content" class="tab-content">
+                <textarea id="draft-output" readonly rows="15"></textarea>
+                <button id="clear-draft-btn">下書きをクリア</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="form.script.js"></script>
+
+</body>
+</html>

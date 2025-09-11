@@ -1,0 +1,123 @@
+body {
+    font-family: sans-serif;
+    padding: 20px;
+    background-color: #f0f2f5;
+}
+
+h1, h2 {
+    font-family: "Yuji Kyokasho", serif;
+    color: #333;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.container {
+    display: flex;
+    gap: 30px;
+}
+
+.form-container {
+    flex: 1;
+}
+
+.output-area {
+    flex: 1.2;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+textarea {
+    font-family: sans-serif;
+}
+
+button {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 5px; /* ボタン同士の余白 */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#code-output, #draft-output {
+    width: 100%;
+    background-color: #e9ecef;
+    font-family: monospace;
+    white-space: pre;
+    overflow-wrap: normal;
+    overflow-x: scroll;
+}
+
+#preview-output {
+    border: 2px dashed #ccc;
+    padding: 15px;
+    background-color: #fff;
+    min-height: 100px;
+}
+
+/* --- タブ切り替えのスタイル --- */
+.tab-container {
+    margin-top: 20px;
+    border-bottom: 2px solid #ccc;
+}
+.tab-btn {
+    background-color: #f1f1f1;
+    color: #333;
+    border: 1px solid #ccc;
+    border-bottom: none;
+    border-radius: 5px 5px 0 0;
+    margin: 0;
+}
+.tab-btn.active {
+    background-color: #fff;
+    border-bottom: 2px solid #fff;
+    margin-bottom: -2px;
+}
+.tab-content {
+    display: none;
+    padding-top: 15px;
+}
+.tab-content.active {
+    display: block;
+}
+
+#clear-draft-btn {
+    background-color: #dc3545;
+    margin-top: 10px;
+}
+
+/* --- スマホ表示対応 --- */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column;
+    }
+    .form-container, .output-area {
+        width: 100%;
+    }
+}
