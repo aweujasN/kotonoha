@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabContents = document.querySelectorAll('.tab-content');
 
     // ★★★ ステップ2でコピーしたウェブアプリのURLをここに貼り付け ★★★
-    const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbydu59U3keSAywY8_0E5ZJCNXiyM111SsU0Qh5PsI3OaU2TaIA9zhz9kFZCCTebVT6V/exec';
+    const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyOdQDL7o3ZzZ5vlop8pgOqi53I4ieDa6g-5xaorNqbbbKGwPno8zG221RWMsuPT6gW/exec';
 
     codeOutput.readOnly = false;
 
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ★ 下書き保存機能をGoogleスプレッドシート連携に変更
     function saveDraft() {
-        const draftCode = codeOutput.value; // 生成されたコード全体を保存
+        const draftCode = generateCode(false);
         if (!draftCode.trim()) {
             alert('保存するコードがありません。');
             return;
@@ -89,11 +89,12 @@ document.addEventListener('DOMContentLoaded', () => {
             method: 'POST',
             mode: 'no-cors',
             headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ draft: draftCode }),
+            // ★ type: 'draft' を指定
+            body: JSON.stringify({ type: 'draft', content: draftCode }),
         })
         .then(() => {
-            alert('下書きをオンラインに保存しました。');
-            loadDraft(); // 保存後に再読み込み
+            alert('下書きをオンラインに追加しました。');
+            loadDraft();
         })
         .catch(error => {
             console.error('Error:', error);
@@ -172,5 +173,4 @@ document.addEventListener('DOMContentLoaded', () => {
     // 初期表示
     updatePreview();
     loadDraft(); // 最初にページを開いたときも下書きを読み込む
-
 });

@@ -207,7 +207,7 @@ function displayWords(words) {
 function setupEventListeners() {
     const container = document.getElementById('word-container');
     const searchBox = document.getElementById('search-box');
-    const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzyQf_iow0vedp-EL1_49utcNZfaXmgDAZeDXBbJpF2lItKX_2ozBl3PxSY6mvzn1R_/exec';
+    const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyOdQDL7o3ZzZ5vlop8pgOqi53I4ieDa6g-5xaorNqbbbKGwPno8zG221RWMsuPT6gW/exec';
 
     searchBox.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
@@ -310,5 +310,4 @@ function createTagButton(text) {
 function updateActiveButton(activeBtn) {
     document.querySelectorAll('.tag-btn').forEach(btn => btn.classList.remove('active'));
     activeBtn.classList.add('active');
-
 }
