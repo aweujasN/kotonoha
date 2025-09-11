@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabContents = document.querySelectorAll('.tab-content');
 
     // ★★★ ステップ2でコピーしたウェブアプリのURLをここに貼り付け ★★★
-    const WEB_APP_URL = 'ここにGoogle Apps ScriptのURLを貼り付け';
+    const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyOdQDL7o3ZzZ5vlop8pgOqi53I4ieDa6g-5xaorNqbbbKGwPno8zG221RWMsuPT6gW/exec';
 
     codeOutput.readOnly = false;
 
