@@ -310,5 +310,4 @@ function createTagButton(text) {
 function updateActiveButton(activeBtn) {
     document.querySelectorAll('.tag-btn').forEach(btn => btn.classList.remove('active'));
     activeBtn.classList.add('active');
-
 }
