@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabBtns = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
 
+    // ★★★ ステップ2でコピーしたウェブアプリのURLをここに貼り付け ★★★
+    const WEB_APP_URL = 'ここにGoogle Apps ScriptのURLを貼り付け';
+
     codeOutput.readOnly = false;
 
     function getTodayDateString() {
@@ -24,6 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function updatePreview() {
+        // (この関数は変更なし)
         const todayDate = getTodayDateString();
         const data = {
             kotoba: kotobaInput.value,
@@ -52,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function generateCode(addToOutput = true) {
+        // (この関数は変更なし)
         const todayDate = getTodayDateString();
         const kotoba = kotobaInput.value;
         const imi = imiInput.value.replace(/\n/g, '<br>');
@@ -72,21 +77,72 @@ document.addEventListener('DOMContentLoaded', () => {
         return newCode;
     }
 
+    // ★ 下書き保存機能をGoogleスプレッドシート連携に変更
     function saveDraft() {
-        const draftCode = generateCode(false); // 出力エリアには追加しない
-        localStorage.setItem('draftCode', draftCode);
-        alert('下書きを保存しました。');
-        loadDraft();
+        const draftCode = codeOutput.value; // 生成されたコード全体を保存
+        if (!draftCode.trim()) {
+            alert('保存するコードがありません。');
+            return;
+        }
+        saveDraftBtn.textContent = "保存中...";
+        fetch(WEB_APP_URL, {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ draft: draftCode }),
+        })
+        .then(() => {
+            alert('下書きをオンラインに保存しました。');
+            loadDraft(); // 保存後に再読み込み
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('保存に失敗しました。');
+        })
+        .finally(() => {
+            saveDraftBtn.textContent = "下書き保存";
+        });
     }
 
+    // ★ 下書き読み込み機能をGoogleスプレッドシート連携に変更
     function loadDraft() {
-        draftOutput.value = localStorage.getItem('draftCode') || '';
+        draftOutput.value = "読み込み中...";
+        fetch(WEB_APP_URL)
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    draftOutput.value = data.draft || '';
+                } else {
+                    draftOutput.value = '読み込みに失敗しました。';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                draftOutput.value = '読み込みエラー。';
+            });
     }
 
+    // ★ 下書きクリア機能をGoogleスプレッドシート連携に変更
     function clearDraft() {
-        if (confirm('下書きを本当にクリアしますか？')) {
-            localStorage.removeItem('draftCode');
-            loadDraft();
+        if (confirm('オンライン上の下書きを本当にクリアしますか？')) {
+            clearDraftBtn.textContent = "クリア中...";
+            fetch(WEB_APP_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ draft: '' }), // 空のデータを送って上書き
+            })
+            .then(() => {
+                alert('下書きをクリアしました。');
+                loadDraft();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('クリアに失敗しました。');
+            })
+            .finally(() => {
+                 clearDraftBtn.textContent = "下書きをクリア";
+            });
         }
     }
 
@@ -96,12 +152,12 @@ document.addEventListener('DOMContentLoaded', () => {
             btn.classList.add('active');
             
             const targetTab = btn.dataset.tab;
+            if(targetTab === 'draft'){
+                loadDraft(); // 下書きタブを開いたときに最新のデータを読み込む
+            }
+
             tabContents.forEach(content => {
-                if (content.id === `${targetTab}-content`) {
-                    content.classList.add('active');
-                } else {
-                    content.classList.remove('active');
-                }
+                content.classList.toggle('active', content.id === `${targetTab}-content`);
             });
         });
     });
@@ -115,5 +171,5 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // 初期表示
     updatePreview();
-    loadDraft();
+    loadDraft(); // 最初にページを開いたときも下書きを読み込む
 });
