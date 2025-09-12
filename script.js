@@ -213,22 +213,24 @@ function setupEventListeners() {
         if (event.key === 'Enter') {
             const query = event.target.value.trim().toLowerCase();
 
+            // ★ サーバーに「検索キーワード」としてデータを送信
             if (query && WEB_APP_URL) {
                 fetch(WEB_APP_URL, {
                     method: 'POST',
                     mode: 'no-cors',
                     headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ query: query }),
+                    // type: 'search' を指定
+                    body: JSON.stringify({ type: 'search', content: query }),
                 })
-                .catch(error => console.error('Error:', error));
+                .catch(error => console.error('Error sending search query:', error));
             }
 
+            // --- 表示の絞り込み処理（変更なし） ---
             if (!query) {
                 wordData.sort((a, b) => new Date(b.hiduke) - new Date(a.hiduke));
                 displayWords(wordData);
                 return;
             }
-
             const tempDiv = document.createElement('div');
             const filteredData = wordData.filter(data => {
                 tempDiv.innerHTML = data.kotoba;
@@ -237,7 +239,6 @@ function setupEventListeners() {
                 const plainDefinition = tempDiv.textContent.toLowerCase();
                 return plainTerm.includes(query) || plainDefinition.includes(query);
             });
-
             filteredData.sort((a, b) => new Date(b.hiduke) - new Date(a.hiduke));
             displayWords(filteredData);
         }
@@ -312,5 +313,6 @@ function updateActiveButton(activeBtn) {
     activeBtn.classList.add('active');
 
 }
+
 
 
