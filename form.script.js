@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const tabContents = document.querySelectorAll('.tab-content');
 
     // ★★★ ステップ2でコピーしたウェブアプリのURLをここに貼り付け ★★★
-    const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbyXYQ3iSMqCZigJdQYe5CIzL853edORW-o7hTElKSC-ODZAeHSDnP9ND5KcFLM217Ni/exec';
+    const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzoBSFYnsEr-ZeBICWlRIO1TsoX6iw3cj98qKvMvc3PudnC3ixrlc62db3AQktvWudKQA/exec';
 
     codeOutput.readOnly = false;
 
@@ -175,3 +175,4 @@ document.addEventListener('DOMContentLoaded', () => {
     loadDraft(); // 最初にページを開いたときも下書きを読み込む
 
 });
+
