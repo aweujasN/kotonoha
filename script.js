@@ -1,5 +1,12 @@
 const wordData = [
     {
+        kotoba: `膕`,
+        imi: `よほろ　ひかがみ　膝膕(シッカク)<br>膝小僧の裏。膝窩。マニアック。`,
+        gazo: ["gazo/hikagami.jpg"],
+        tagu: ["身体","漢字"],
+        hiduke: "2025-09-15"
+    },
+    {
         kotoba: `ウェンケバッハ型Ⅱ度房室ブロック`,
         imi: `モビッツⅠ型とも。<br>洞結節から心房結節までの電気信号は流れるが、房室結節からの電気信号が正常に伝達されない。<br>PQ間隔が1泊毎に徐々に延長していき、QRS波が欠落する。<br>モビッツⅡ型(PQ間隔の延長なしに突如QRS波が欠落する)になるとまずい。<br>ウェンケバッハの旋律を夜に聴いたせいです。`,
         gazo: ["gazo/sinzo.png"],
@@ -368,6 +375,7 @@ function updateActiveButton(activeBtn) {
 
 
 }
+
 
 
 
