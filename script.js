@@ -134,7 +134,7 @@ const wordData = [
     },
     {
         kotoba: `なつめ　棗`,
-        imi: `和名なつめ、中国語でソウ。<br>棘棘しいがバラ目なので棘棘してる。実はビタミン豊富らしい。`,
+        imi: `和名なつめ、中国語でソウ。<br>漢字が棘棘しいがバラ目なので実際も棘棘してる。実はビタミンが豊富らしい。<br>棗棗石「朿輩は棘である」`,
         gazo: [""],
         tagu: ["草木","実","漢字"],
         hiduke: "2025-09-16"
@@ -514,3 +514,4 @@ function updateActiveButton(activeBtn) {
     activeBtn.classList.add('active');
 
 }
+
