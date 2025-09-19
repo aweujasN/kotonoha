@@ -1,1 +1,1 @@
-# [調べた言葉辞典](https://aweujasN.github.io/kotonoha)
+# [調べた言葉辞典](https://aweujasN.github.io/kotonoha/)
