@@ -10,7 +10,7 @@ const wordData = [
         kotoba: `うどんげ　優曇華　憂曇華`,
         imi: `3000年に1度咲く伝説の花。或いはアイラトビカズラ(相良飛び葛)の喩え。或いはクサカゲロウ(草蜉蝣)の卵塊。或いは鈴仙。`,
         gazo: [""],
-        tagu: ["花","草木","キャラクター"],
+        tagu: ["花","草木","キャラクター","仏教"],
         hiduke: "2025-09-19"
     },
     {
@@ -86,8 +86,8 @@ const wordData = [
     {
         kotoba: `いかる　鵤　桑鳲 <br>いかるが　鵤　斑鳩`,
         imi: `頭が黒く、嘴の黄色い小鳥。嘴で木の実をころころ転がしたり木の実を好んで食べたところから、昔は「豆転がし」「まめうまし」などと呼ばれていた。<br>鳴き声が「いかるこきー」と聞こえるらしい。¿鵤に烏賊が怒るが如何か?`,
-        gazo: [""],
-        tagu: ["鳥","故事成語･諺","四字熟語"],
+        gazo: ["gazo/ikaru.jpg"],
+        tagu: ["鳥","漢字"],
         hiduke: "2025-09-16"
     },
     {
@@ -101,14 +101,14 @@ const wordData = [
         kotoba: `うそ　鷽`,
         imi: `雀よりやや大きい小鳥。翼開長26cm。嘴は太くて黒くて短い。<br>全体的に灰色で、頭と翼・尾っぽは黒い。雄は首周りが橙色。<br>鷽鳩大鵬を笑う　鷽鳩笑鵬`,
         gazo: ["gazo/uso.jpg"],
-        tagu: ["鳥","故事成語･諺","四字熟語"],
+        tagu: ["鳥","漢字","故事成語･諺","四字熟語"],
         hiduke: "2025-09-16"
     },
     {
         kotoba: `ひたき　鶲`,
         imi: `多くの種、多くの姿･色模様を持つ小鳥。鶫とは姉妹種。<br>雄が色気づいて、雌が垢抜けない姿が多い。秋の季語。`,
         gazo: ["gazo/nobitaki.jpg","gazo/joubitaki.jpg","gazo/ooruri.jpg"],
-        tagu: ["鳥"],
+        tagu: ["鳥","漢字"],
         hiduke: "2025-09-16"
     },
     {
@@ -274,16 +274,18 @@ const wordData = [
     }
 ];
 
+// ★ 選択中(含む)と除外中のタグをそれぞれ保存
+let includeTags = new Set();
+let excludeTags = new Set();
+
+// ページの読み込みが完了したら実行
 window.onload = function() {
-    // ★ 単語数を計算して表示
     const wordCount = wordData.length;
     const countDisplay = document.getElementById('word-count-display');
     if (countDisplay) {
         countDisplay.textContent = `登録数: ${wordCount}`;
     }
-
-    wordData.sort((a, b) => new Date(b.hiduke) - new Date(a.hiduke));
-    displayWords(wordData);
+    updateDisplay();
     displayTags();
     setupEventListeners();
 };
@@ -295,7 +297,7 @@ function createWordEntryElement(data, entryId) {
     entryDiv.dataset.term = data.kotoba;
 
     let imagesHtml = '';
-    if (data.gazo && data.gazo.length > 0) {
+    if (data.gazo && data.gazo.length > 0 && data.gazo[0] !== "") {
         const imageLinks = data.gazo.map((imgSrc, i) =>
             `<span class="image-toggler" data-img-id="${entryId}-img-${i}">${imgSrc.replace('gazo/', '')}</span>`
         ).join('');
@@ -405,6 +407,47 @@ function displayWords(words) {
     });
 }
 
+function updateDisplay() {
+    const searchBox = document.getElementById('search-box');
+    const query = searchBox.value.trim().toLowerCase();
+    
+    let filteredData = wordData;
+
+    // 選択(含む)タグでの絞り込み
+    if (includeTags.size > 0) {
+        const tagsToInclude = Array.from(includeTags);
+        filteredData = filteredData.filter(item => 
+            tagsToInclude.every(tag => (item.tagu || []).includes(tag))
+        );
+    }
+
+    // 除外タグでの絞り込み
+    if (excludeTags.size > 0) {
+        const tagsToExclude = Array.from(excludeTags);
+        filteredData = filteredData.filter(item => 
+            !tagsToExclude.some(tag => (item.tagu || []).includes(tag))
+        );
+    }
+
+    // 検索キーワードでの絞り込み
+    if (query) {
+        const tempDiv = document.createElement('div');
+        filteredData = filteredData.filter(data => {
+            tempDiv.innerHTML = data.kotoba;
+            const plainTerm = tempDiv.textContent.toLowerCase();
+            tempDiv.innerHTML = data.imi;
+            const plainDefinition = tempDiv.textContent.toLowerCase();
+            return plainTerm.includes(query) || plainDefinition.includes(query);
+        });
+    }
+
+    // 登録日でソート
+    filteredData.sort((a, b) => new Date(b.hiduke) - new Date(a.hiduke));
+
+    // 最終結果を表示
+    displayWords(filteredData);
+}
+
 function setupEventListeners() {
     const container = document.getElementById('word-container');
     const searchBox = document.getElementById('search-box');
@@ -413,8 +456,6 @@ function setupEventListeners() {
     searchBox.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
             const query = event.target.value.trim().toLowerCase();
-
-            // ★ サーバーに「検索キーワード」としてデータを送信
             if (query && WEB_APP_URL) {
                 fetch(WEB_APP_URL, {
                     method: 'POST',
@@ -484,33 +525,56 @@ function displayTags() {
     if (!tagContainer) return;
     tagContainer.innerHTML = '';
     const allTags = new Set(wordData.flatMap(d => d.tagu || []));
+
     const allBtn = createTagButton('すべて表示');
     allBtn.classList.add('active');
     allBtn.onclick = () => {
-        wordData.sort((a, b) => new Date(b.hiduke) - new Date(a.hiduke));
-        displayWords(wordData);
-        updateActiveButton(allBtn);
+        includeTags.clear();
+        excludeTags.clear();
+        document.querySelectorAll('#tag-container .tag-btn').forEach(b => {
+            b.classList.remove('active', 'exclude');
+        });
+        allBtn.classList.add('active');
+        updateDisplay();
     };
     tagContainer.appendChild(allBtn);
+
     allTags.forEach(tag => {
         const tagBtn = createTagButton(tag);
         tagBtn.onclick = () => {
-            const filteredWords = wordData.filter(d => (d.tagu || []).includes(tag));
-            filteredWords.sort((a, b) => new Date(b.hiduke) - new Date(a.hiduke));
-            displayWords(filteredWords);
-            updateActiveButton(tagBtn);
+            const isIncluded = includeTags.has(tag);
+            const isExcluded = excludeTags.has(tag);
+
+            if (!isIncluded && !isExcluded) {
+                // 通常 -> 選択
+                includeTags.add(tag);
+                tagBtn.classList.add('active');
+            } else if (isIncluded) {
+                // 選択 -> 除外
+                includeTags.delete(tag);
+                excludeTags.add(tag);
+                tagBtn.classList.remove('active');
+                tagBtn.classList.add('exclude');
+            } else if (isExcluded) {
+                // 除外 -> 通常
+                excludeTags.delete(tag);
+                tagBtn.classList.remove('exclude');
+            }
+
+            if (includeTags.size > 0 || excludeTags.size > 0) {
+                allBtn.classList.remove('active');
+            } else {
+                allBtn.classList.add('active');
+            }
+            updateDisplay();
         };
         tagContainer.appendChild(tagBtn);
     });
 }
+
 function createTagButton(text) {
     const button = document.createElement('button');
     button.className = 'tag-btn';
     button.textContent = text;
     return button;
-}
-function updateActiveButton(activeBtn) {
-    document.querySelectorAll('.tag-btn').forEach(btn => btn.classList.remove('active'));
-    activeBtn.classList.add('active');
-
 }

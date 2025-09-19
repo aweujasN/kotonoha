@@ -223,3 +223,14 @@ header h1 {
         margin-top: 20px;
     }
 }
+/* 「除外」選択されたタグボタンのスタイル */
+.tag-btn.exclude {
+    background-color: rgba(220, 53, 69, 0.8); /* 半透明の赤 */
+    color: white;
+    text-decoration: line-through; /* 取り消し線 */
+    border: 1px solid #dc3545;
+}
+
+.tag-btn.exclude:hover {
+    background-color: rgb(220, 53, 69);
+}

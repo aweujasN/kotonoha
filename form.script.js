@@ -26,20 +26,41 @@ document.addEventListener('DOMContentLoaded', () => {
         return `${yyyy}-${mm}-${dd}`;
     }
     
+    // プレビューを更新する関数
     function updatePreview() {
         const todayDate = getTodayDateString();
+
+        // ★ gazo欄が空欄の場合の処理を追加
+        let gazoData;
+        if (gazoInput.value.trim() === '') {
+            gazoData = [""];
+        } else {
+            gazoData = gazoInput.value.split('\n')
+                .map(g => g.trim())
+                .filter(g => g !== '')
+                .map(g => `gazo/${g}`);
+        }
+
         const data = {
             kotoba: kotobaInput.value,
             imi: imiInput.value.replace(/\n/g, '<br>'),
-            gazo: gazoInput.value.split('\n').map(g => g.trim()).filter(g => g !== '').map(g => `gazo/${g}`),
+            gazo: gazoData,
             tagu: taguInput.value.split(',').map(t => t.trim()).filter(t => t !== ''),
             hiduke: todayDate
         };
+
         const entryDiv = document.createElement('div');
         entryDiv.className = 'word-entry';
-        let imagesHtml = (data.gazo && data.gazo.length > 0) ? `<div class="word-image">...画像プレビュー...</div>` : '';
+
+        let imagesHtml = '';
+        // プレビューではgazoが[""]の場合も画像エリアを表示しない
+        if (data.gazo && data.gazo.length > 0 && data.gazo[0] !== '') {
+            imagesHtml = `<div class="word-image">...画像プレビュー...</div>`;
+        }
+
         const dateHtml = data.hiduke ? `<div class="registered-date">登録日: ${data.hiduke}</div>` : '';
         const tagsHtml = (data.tagu && data.tagu.length > 0) ? `<div class="registered-date">タグ: ${data.tagu.join(', ')}</div>` : '';
+        
         entryDiv.innerHTML = `
             <div class="word-details">
                 <div class="term-column">
@@ -54,14 +75,29 @@ document.addEventListener('DOMContentLoaded', () => {
         previewOutput.appendChild(entryDiv);
     }
     
+    // コードを生成する関数
     function generateCode(addToOutput = true) {
         const todayDate = getTodayDateString();
+
         const kotoba = kotobaInput.value;
         const imi = imiInput.value.replace(/\n/g, '<br>');
-        const gazo = gazoInput.value.split('\n').map(g => g.trim()).filter(g => g !== '').map(g => `gazo/${g}`);
+        
+        // ★ gazo欄が空欄の場合の処理を追加
+        let gazo;
+        if (gazoInput.value.trim() === '') {
+            gazo = [""];
+        } else {
+            gazo = gazoInput.value.split('\n')
+                .map(g => g.trim())
+                .filter(g => g !== '')
+                .map(g => `gazo/${g}`);
+        }
+
         const tagu = taguInput.value.split(',').map(t => t.trim()).filter(t => t !== '');
+        
         const gazoString = JSON.stringify(gazo);
         const taguString = JSON.stringify(tagu);
+
         const newCode = `    {
         kotoba: \`${kotoba}\`,
         imi: \`${imi}\`,
@@ -83,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
         saveDraftBtn.textContent = "保存中...";
-        saveDraftBtn.disabled = true; // ボタンを一時的に無効化
+        saveDraftBtn.disabled = true;
 
         fetch(WEB_APP_URL, {
             method: 'POST',
@@ -92,19 +128,16 @@ document.addEventListener('DOMContentLoaded', () => {
             body: JSON.stringify({ type: 'draft', content: draftCode }),
         })
         .then(() => {
-            // ★ alertを削除し、ボタンのテキストを「成功」に変更
             saveDraftBtn.textContent = "成功";
             loadDraft();
-            // ★ 2秒後にボタンのテキストを元に戻す
             setTimeout(() => {
                 saveDraftBtn.textContent = "下書き保存";
-                saveDraftBtn.disabled = false; // ボタンを再度有効化
+                saveDraftBtn.disabled = false;
             }, 2000);
         })
         .catch(error => {
             console.error('Error:', error);
             alert('保存に失敗しました。');
-            // ★ 失敗した場合もボタンを元に戻す
             saveDraftBtn.textContent = "下書き保存";
             saveDraftBtn.disabled = false;
         });
