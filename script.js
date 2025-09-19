@@ -1,5 +1,12 @@
 const wordData = [
     {
+        kotoba: `弁慶の泣き所`,
+        imi: `脛。或いは強者の弱点。`,
+        gazo: [""],
+        tagu: ["故事成語･諺","身体"],
+        hiduke: "2025-09-19"
+    },
+    {
         kotoba: `燕雀安んぞ鴻鵠の志を知らんや`,
         imi: `取るに足らない小さい者に大きな者の大きな志は分からん。<br>単に「鴻鵠の志」でも用いられる。<br>≒鷽鳩大鵬を笑う`,
         gazo: [""],
@@ -577,4 +584,5 @@ function createTagButton(text) {
     button.className = 'tag-btn';
     button.textContent = text;
     return button;
+
 }
