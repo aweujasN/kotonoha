@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // ★ gazo欄が空欄の場合の処理を追加
         let gazoData;
         if (gazoInput.value.trim() === '') {
-            gazoData = [""];
+            gazoData = [" "];
         } else {
             gazoData = gazoInput.value.split('\n')
                 .map(g => g.trim())
@@ -208,4 +208,5 @@ document.addEventListener('DOMContentLoaded', () => {
     
     updatePreview();
     loadDraft();
+
 });
