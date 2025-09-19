@@ -1,1 +1,1 @@
-starting my life
+# [調べた言葉辞典](https://aweujasN.github.io/kotonoha)
