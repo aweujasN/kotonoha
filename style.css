@@ -73,6 +73,7 @@ header h1 {
 /* 単語と日付をまとめる左側の列 */
 .term-column {
     flex: 1;
+    padding-right: 10px;
 }
 
 /* 単語のスタイル */
