@@ -121,3 +121,25 @@ button:hover {
         width: 100%;
     }
 }
+
+/* 生成コード欄のアクションボタンのコンテナ */
+.code-actions {
+    display: flex;
+    justify-content: flex-end; /* ボタンを右寄せにする */
+    margin-bottom: 5px;
+}
+
+/* アクションボタンの個別スタイル */
+.code-actions button {
+    padding: 4px 12px;
+    font-size: 0.8em;
+    margin-left: 8px; /* ボタン間の余白 */
+}
+
+/* クリアボタンの色を変更 */
+#clear-code-btn {
+    background-color: #6c757d;
+}
+#clear-code-btn:hover {
+    background-color: #5a6268;
+}
