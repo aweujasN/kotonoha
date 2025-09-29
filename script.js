@@ -1,7 +1,7 @@
 const wordData = [
     {
         kotoba: `えのころぐさ　莠　狗尾草`,
-        imi: `莠ははぐさ、みにく-いとも。<br>みんな大好き猫じゃらし。でも漢字は犬の尾っぽ。粟の原種で一応食べられる。`,
+        imi: `莠ははぐさ、みにく-いとも。<br>みんな大好き猫じゃらし。でも漢字は犬の尾っぽで粟の原種。美味しくはない。`,
         gazo: [""],
         tagu: ["草木","漢字"],
         hiduke: "2025-09-25"
@@ -471,7 +471,10 @@ function createWordEntryElement(data, entryId) {
     entryDiv.id = entryId;
     entryDiv.dataset.term = data.kotoba;
 
-    let imagesHtml = '';
+    // まず画像エリアのコンテナを生成
+    let imagesHtml = '<div class="word-image">';
+
+    // gazoが空配列や空文字でない場合のみ、中身(リンクやimgタグ)を生成
     if (data.gazo && data.gazo.length > 0 && data.gazo[0] !== "") {
         const imageLinks = data.gazo.map((imgSrc, i) =>
             `<span class="image-toggler" data-img-id="${entryId}-img-${i}">${imgSrc.replace('gazo/', '')}</span>`
@@ -479,8 +482,11 @@ function createWordEntryElement(data, entryId) {
         const imageTags = data.gazo.map((imgSrc, i) =>
             `<img src="${imgSrc}" alt="${data.kotoba.replace(/<[^>]*>/g, '')}" id="${entryId}-img-${i}" style="display: none;">`
         ).join('');
-        imagesHtml = `<div class="word-image">${imageLinks}${imageTags}</div>`;
+        
+        imagesHtml += imageLinks + imageTags; // 生成した中身を追加
     }
+    
+    imagesHtml += '</div>'; // コンテナを閉じる
 
     const dateHtml = data.hiduke ? `<div class="registered-date">登録日: ${data.hiduke}</div>` : '';
 
@@ -752,8 +758,4 @@ function createTagButton(text) {
     button.className = 'tag-btn';
     button.textContent = text;
     return button;
-
 }
-
-
-
