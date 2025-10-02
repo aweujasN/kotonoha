@@ -1,5 +1,12 @@
 const wordData = [
     {
+        kotoba: `モンキアゲハ`,
+        imi: `紋黄揚羽。全体的に黒く、クロアゲハとは異なり後翅に黄白の紋がある。雌はこの周りを三日月の赤い紋で飾る。`,
+        gazo: ["gazo/monkiageha.jpg"],
+        tagu: ["虫","写真撮った"],
+        hiduke: "2025-10-02"
+    },
+    {
         kotoba: `芙蓉峰`,
         imi: `フヨウホウ　富士山の異名。<br>芙蓉の美しさに見てた雅称。一説によると、古代中国の日本の名称が芙蓉だったことからこう称した。`,
         gazo: ["gazo/huyouhou.jpg"],
@@ -810,4 +817,5 @@ function createTagButton(text) {
     return button;
 
 }
+
 
