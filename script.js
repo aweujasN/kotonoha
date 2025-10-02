@@ -1,5 +1,12 @@
 const wordData = [
     {
+        kotoba: `芙蓉峰`,
+        imi: `フヨウホウ　富士山の異名。<br>芙蓉の美しさに見てた雅称。一説によると、古代中国の日本の名称が芙蓉だったことからこう称した。`,
+        gazo: ["gazo/huyouhou.jpg"],
+        tagu: ["山"],
+        hiduke: "2025-10-02"
+    },
+    {
         kotoba: `皐魚の泣`,
         imi: `コウギョのキュウ<br>親の死を嘆き悲しんで泣く亊。<br>そんな皐魚という賢者を見た孔子の教訓。<br>≒風樹の嘆`,
         gazo: [""],
@@ -801,4 +808,5 @@ function createTagButton(text) {
     button.className = 'tag-btn';
     button.textContent = text;
     return button;
+
 }
