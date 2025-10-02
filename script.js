@@ -1,5 +1,41 @@
 const wordData = [
     {
+        kotoba: `皐魚の泣`,
+        imi: `コウギョのキュウ<br>親の死を嘆き悲しんで泣く亊。<br>そんな皐魚という賢者を見た孔子の教訓。<br>≒風樹の嘆`,
+        gazo: [""],
+        tagu: ["故事成語･諺","親"],
+        hiduke: "2025-10-01"
+    },
+    {
+        kotoba: `風樹の嘆
+`,
+        imi: `フウジュのタン<br>親孝行をしようと思った時には、既に親は他界していて孝行出来ない嘆き。<br><br>樹(き)静かならんと欲すれども風止まず<br>風樹の嘆、親が生きているうちに孝行せよという教え。また人生は思い通りにいかないという教え。<br>≒皐魚の泣`,
+        gazo: [""],
+        tagu: ["故事成語･諺","親"],
+        hiduke: "2025-10-01"
+    },
+    {
+        kotoba: `鶴九皐に鳴き声天に聞こゆ`,
+        imi: `つるキュウコウになきこえてんにきこゆ<br>優れた者は隠れていてもその名声が遠くまで知れ渡る。<br>鶴の気品のある声は、九皐即ち沼沢の奥深くからも天に届く意。`,
+        gazo: [""],
+        tagu: ["故事成語･諺","鳥"],
+        hiduke: "2025-10-01"
+    },
+    {
+        kotoba: `ばら　薔薇`,
+        imi: `言わずもがな花の女王。我々の想像するザ･薔薇は園芸品種。<br>「いばら(茨･荊･棘･楚)」が訛って「ばら」という和名になったとされる。<br>薔薇はそうび、しょうびとも読む。ラテン語でRosa。<br>様々な色や形、大きさの品種がある。`,
+        gazo: ["gazo/bara.jpg"],
+        tagu: ["花","漢字"],
+        hiduke: "2025-10-01"
+    },
+    {
+        kotoba: `すみれ　菫`,
+        imi: `深い紫、菫色(violet)の花。一口に菫と言っても、属種が多種多様である為、愛好家の間では最も代表的な本種をマンジュリカ(viola mandshurica:満州のヴィオラの意)と呼ばれる事もある。<br>ヴィオラやパンジーなどが同属であり、交雑が激しく文字通り多種多様。<br>菫はとりかぶととも読む。`,
+        gazo: ["gazo/sumire.jpg"],
+        tagu: ["花","漢字"],
+        hiduke: "2025-10-01"
+    },
+    {
         kotoba: `ツツジトゲムネサルゾウムシ`,
         imi: `躑躅の蕾を食べるサルゾウムシ。<br>猿なのか象なのかはっきりしてほしい。`,
         gazo: [""],
@@ -8,7 +44,7 @@ const wordData = [
     },
     {
         kotoba: `靉靆`,
-        imi: `あいたい。当て字でたなび-く。<br>1.雲や霞が棚引いている様子。雲が空を厚く覆っている様子。<br>2.気持ちや表情が晴れず陰気な様子。<br>3.眼鏡。<br><br>靉靆とした空の下、香煙が靉靆く中で、一枚の写真に相対する靉靆をかけた老爺は靉靆として笑って言った。<br>「俺も早くそっちにいって、お前に、あいたい……」<br>親族たちがすすり泣きながら老爺を見守っている一方で、これを読んだ貴方は痛々しい真顔のまま内心ではくすりと笑う。`,
+        imi: `アイタイ。当て字でたなび-く。<br>1.雲や霞が棚引いている様子。雲が空を厚く覆っている様子。<br>2.気持ちや表情が晴れず陰気な様子。<br>3.眼鏡。<br><br>靉靆とした空の下、香煙が靉靆く中で、一枚の写真に相対する靉靆をかけた老爺は靉靆として笑って言った。<br>「俺も早くそっちにいって、お前に、あいたい……」<br>親族たちがすすり泣きながら老爺を見守っている一方で、これを読んだ貴方は痛々しい真顔のまま内心ではくすりと笑う。`,
         gazo: [""],
         tagu: ["漢字","熟語","物","表情"],
         hiduke: "2025-09-30"
@@ -16,7 +52,7 @@ const wordData = [
     {
         kotoba: `あおさぎ　青鷺　蒼鷺`,
         imi: `河川や湖沼、湿原、干潟、水田などに生息する大型の鳥。翼開長160cm。<br>眉の辺りから後頭にかけてや頸に黒い筋模様がある。翼を広げると、深い青灰色をした羽の先が見られる。<br>爬虫類、両生類、魚類、節足動物などを食べる。コロニーを形成し営巣する。<br>ペリカン目なので頭は多分悪い。`,
-        gazo: ["gazo/aosagi.png"],
+        gazo: ["gazo/aosagi.png","gazo/aosagi2.png"],
         tagu: ["鳥","漢字"],
         hiduke: "2025-09-30"
     },
@@ -37,14 +73,14 @@ const wordData = [
     {
         kotoba: `ひがんばな　彼岸花`,
         imi: `別名曼珠沙華(マンジュシャゲ)、石蒜(セキサン)。Lycorisはヒガンバナ属の学名であり、英名はred spider lily(赤い蜘蛛の百合)。<br>秋のお彼岸に咲く、不吉なほど美しい赤色の花。<br>死人花(しびとばな)、火事花(かじばな)など、各地で様々な異名があり、しかしそのどれもが死や禍を連想させる不吉なものが多い。<br>日本の彼岸花の殆どは染色体が三倍体であり、種子を作ることが出来ない。そのため、分球によって繁殖する。<br>彼岸花の花びらは散らねえっつってんだろ。まんじゅしゃ’か'は山口百恵かサンスクリット語だろうが。`,
-        gazo: ["gazo/higanbana.png"],
+        gazo: ["gazo/higanbana.png","gazo/shirobanamanjushage.jpg"],
         tagu: ["花","写真撮った"],
         hiduke: "2025-09-30"
     },
     {
         kotoba: `えのころぐさ　狗尾草　莠`,
         imi: `莠ははぐさ、みにく-いとも。<br>みんな大好き猫じゃらし。でも漢字は犬の尾っぽで粟の原種。美味しくはない。`,
-        gazo: [""],
+        gazo: ["gazo/enokorogusa.jpg"],
         tagu: ["草木","漢字"],
         hiduke: "2025-09-25"
     },
@@ -85,7 +121,7 @@ const wordData = [
     },
     {
         kotoba: `徒の悋気`,
-        imi: `あだのりんき　悋気は嫉妬の意。<br>自分のことではないのに、他人の恋愛を見てやきもちを焼いたりねたむこと。<br>先日、あの子から気になる相手がいるという話を受けたが、最近交際することになったらしい。その男はどんなやつなんだろうか。あの子の事をどれくらい知っているのだろうか——ああ、全く、徒の悋気甚だしいな。彼女に女としての興味など無いのだから。`,
+        imi: `あだのリンキ　悋気は嫉妬の意。<br>自分のことではないのに、他人の恋愛を見てやきもちを焼いたりねたむこと。<br>先日、あの子から気になる相手がいるという話を受けたが、最近交際することになったらしい。その男はどんなやつなんだろうか。あの子の事をどれくらい知っているのだろうか——ああ、全く、徒の悋気甚だしいな。彼女に女としての興味など無いのだから。`,
         gazo: [""],
         tagu: ["故事成語･諺","男女","感情"],
         hiduke: "2025-09-24"
@@ -134,14 +170,14 @@ const wordData = [
     },
     {
         kotoba: `比翼の鳥`,
-        imi: `ひよくのとり<br>雌雄共に片目片翼しか持たず、常に雌雄一体となって飛ぶ伝説の鳥。<br>男女の契りの深いことを喩える。鴛鴦は伝説の鳥だった・・・？→鴛鴦之契`,
+        imi: `ヒヨクのとり<br>雌雄共に片目片翼しか持たず、常に雌雄一体となって飛ぶ伝説の鳥。<br>男女の契りの深いことを喩える。鴛鴦は伝説の鳥だった・・・？→鴛鴦之契`,
         gazo: [""],
         tagu: ["夫婦","故事成語･諺"],
         hiduke: "2025-09-22"
     },
     {
         kotoba: `鴛鴦之契`,
-        imi: `えんおうのちぎり<br>鴛鴦とはおしどり。夫婦の仲が睦まじいことの喩え。鴛鴦は雌雄で常に一緒にいる鳥で、非常に仲の良い夫婦に喩える。あの二人っておしどり夫婦だよねー。`,
+        imi: `エンオウのちぎり<br>鴛鴦とはおしどり。夫婦の仲が睦まじいことの喩え。鴛鴦は雌雄で常に一緒にいる鳥で、非常に仲の良い夫婦に喩える。あの二人っておしどり夫婦だよねー。`,
         gazo: [""],
         tagu: ["夫婦","故事成語･諺"],
         hiduke: "2025-09-22"
@@ -183,7 +219,7 @@ const wordData = [
     },
     {
         kotoba: `姉女房は身代の薬`,
-        imi: `あねにょうぼうはしんだいのくすり<br>年上の妻はやりくりが上手だし夫を大事にするから夫婦円満でいられるよ。`,
+        imi: `あねニョウボウはシンダイのくすり<br>年上の妻はやりくりが上手だし夫を大事にするから夫婦円満でいられるよ。`,
         gazo: [""],
         tagu: ["夫婦","故事成語･諺"],
         hiduke: "2025-09-22"
@@ -218,7 +254,7 @@ const wordData = [
     },
     {
         kotoba: `燕雀安んぞ鴻鵠の志を知らんや`,
-        imi: `取るに足らない小さい者に大きな者の大きな志は分からん。<br>単に「鴻鵠の志」でも用いられる。<br>≒鷽鳩大鵬を笑う`,
+        imi: `エンジャクいずくんぞコウコクのこころざしをしらんや<br>取るに足らない小さい者に大きな者の大きな志は分からん。<br>単に「鴻鵠の志」でも用いられる。<br>≒鷽鳩大鵬を笑う`,
         gazo: [""],
         tagu: ["鳥","故事成語･諺"],
         hiduke: "2025-09-19"
@@ -239,28 +275,28 @@ const wordData = [
     },
     {
         kotoba: `糟糠の妻は堂より下さず`,
-        imi: `そうこうのつまはどうよりくださず<br>単に「糟糠の妻」でも用いられる。<br>ひもじかった頃に傍で支えてくれた妻は生涯マジで大事にしろ。`,
+        imi: `ソウコウのつまはドウよりくださず<br>単に「糟糠の妻」でも用いられる。<br>ひもじかった頃に傍で支えてくれた妻は生涯マジで大事にしろ。`,
         gazo: [""],
         tagu: ["夫婦","故事成語･諺"],
         hiduke: "2025-09-19"
     },
     {
         kotoba: `内縁の妻`,
-        imi: `ないえんのつま<br>婚姻に準ずる関係の女性。互いに婚姻の意思があり、且つ一般的に3年以上の共同生活(事実上の夫婦として)を以て認められる。厳密な年数は定められていない。<br>結婚していなくても法律上の妻として扱われる。<br>3人の女性とそういう関係にあったらどうなるんだろうね。`,
+        imi: `ナイエンのつま<br>婚姻に準ずる関係の女性。互いに婚姻の意思があり、且つ一般的に3年以上の共同生活(事実上の夫婦として)を以て認められる。厳密な年数は定められていない。<br>結婚していなくても法律上の妻として扱われる。<br>3人の女性とそういう関係にあったらどうなるんだろうね。`,
         gazo: [""],
         tagu: ["夫婦","故事成語･諺"],
         hiduke: "2025-09-19"
     },
     {
         kotoba: `髪結いの亭主`,
-        imi: `かみゆいのていしゅ<br>ヒモ男。妻の稼ぎで養われる夫。<br>江戸時代、髪結いは女性の稼げる職業だったらしい。<br>桂歌丸師匠(本名椎名巌。横浜市南区真金町に在住していた。)は落語「厩火事」で「かみい」と江戸訛りで発声している。<br>俺的関連語:内縁の妻`,
+        imi: `かみゆいのテイシュ<br>ヒモ男。妻の稼ぎで養われる夫。<br>江戸時代、髪結いは女性の稼げる職業だったらしい。<br>桂歌丸師匠(本名椎名巌。横浜市南区真金町に在住していた。)は落語「厩火事」で「かみい」と江戸訛りで発声している。<br>俺的関連語:内縁の妻`,
         gazo: [""],
         tagu: ["夫婦","故事成語･諺"],
         hiduke: "2025-09-19"
     },
     {
         kotoba: `一髪二姿三器量`,
-        imi: `いちかみにすがたさんきりょう<br>大和撫子に必要な3拍子。女は1番に綺麗な髪、2番目に綺麗な身なり、3番目に綺麗な容姿が重要である。逆に、美人でも身なりを整えてないと綺麗に見えないし、美人で身なりを整えていても髪がボサボサじゃ綺麗に見えないよという戒め。諸説ある。<br>≒一髪二化粧三衣装`,
+        imi: `いちかみにすがたさんキリョウ<br>大和撫子に必要な3拍子。女は1番に綺麗な髪、2番目に綺麗な身なり、3番目に綺麗な容姿が重要である。逆に、美人でも身なりを整えてないと綺麗に見えないし、美人で身なりを整えていても髪がボサボサじゃ綺麗に見えないよという戒め。諸説ある。<br>≒一髪二化粧三衣装`,
         gazo: [""],
         tagu: ["男女","故事成語･諺"],
         hiduke: "2025-09-19"
@@ -274,7 +310,7 @@ const wordData = [
     },
     {
         kotoba: `一髪二化粧三衣装`,
-        imi: `いちかみにけしょうさんいしょう<br>いい女の3拍子。女は1番に綺麗な髪の、2番目に綺麗な化粧、3番目に綺麗な被服が重要であるという主張。諸説ある。<br>↔一押し二金三男`,
+        imi: `いちかみにケショウさんイショウ<br>いい女の3拍子。女は1番に綺麗な髪の、2番目に綺麗な化粧、3番目に綺麗な被服が重要であるという主張。諸説ある。<br>↔一押し二金三男`,
         gazo: [""],
         tagu: ["男女","故事成語･諺"],
         hiduke: "2025-09-19"
@@ -288,14 +324,14 @@ const wordData = [
     },
     {
         kotoba: `やもめ　寡　孀　寡婦　釐　鰥`,
-        imi: `寡婦(かふ)。widow(ウィドー)。孀婦(そうふ)。後家(ごけ)。未亡人。<br>夫を失くし独りになってしまった女性。寡婦(かふ)、widowは離婚の場合も含む。男の場合は鰥、男やもめ、寡夫(かふ)、寡男(やもお)、とも。<br>男鰥に蛆が湧き、女寡に花が咲く。<br>`,
+        imi: `寡婦はカフとも。widow(ウィドー)。孀婦(ソウフ)。後家(ゴケ)。未亡人。<br>夫を失くし独りになってしまった女性。寡婦(カフ)、widowは離婚の場合も含む。男の場合は鰥、男やもめ、寡夫(カフ)、寡男(やもお)、とも。<br>男鰥に蛆が湧き、女寡に花が咲く。<br>`,
         gazo: [""],
         tagu: ["夫婦","漢字"],
         hiduke: "2025-09-19"
     },
     {
         kotoba: `はしばみ　榛`,
-        imi: `はしばみ はり<br>シン<br>はんのき。または藪、雑木林。榛荊(シンケイ)`,
+        imi: `はしばみ　はり　シン<br>はんのき。または藪、雑木林。榛荊(シンケイ)`,
         gazo: [""],
         tagu: ["漢字","草木"],
         hiduke: "2025-09-17"
@@ -309,7 +345,7 @@ const wordData = [
     },
     {
         kotoba: `鷽鳩大鵬を笑う　鷽鳩笑鵬`,
-        imi: `がくきゅうたいほうをわらう　がくきゅうしょうほう<br>ちっぽけなのがおっきなのを笑うこと。鷽鳩は小さな鳩の意(一説によると鵤)。<br>≒燕雀安んぞ鴻鵠の志を知らんや`,
+        imi: `ガクキュウたいほうをわらう　ガクキュウショウホウ<br>ちっぽけなのがおっきなのを笑うこと。鷽鳩は小さな鳩の意(一説によると鵤)。<br>≒燕雀安んぞ鴻鵠の志を知らんや`,
         gazo: [""],
         tagu: ["鳥","故事成語･諺","四字熟語"],
         hiduke: "2025-09-16"
@@ -395,7 +431,7 @@ const wordData = [
         kotoba: `かや　茅　萱　茆　榧`,
         imi: `ちがや、芒、菅(すげ)などの細く真っ直ぐ育つ有用植物の呼称。かや葺き屋根のかや。<br>茅はちがや・ち、萱はわすれぐさ、茆はじゅんさい・ぬなわとも。<br>椿萱(チンケン)は父母。萱堂は母を敬った言葉。↔椿堂、椿庭。<br>椿萱並茂：両親が健康で暮らしていること。<br><br>榧はかやのき。20mにもなる常緑針葉樹。<br>いちい(おんこ、あららぎ)、きゃらぼくの近縁種(イチイ科カヤ属)。<br>↑こいつらと違って種に毒のある赤い実はつけない。<br>あれ甘いんだよな。ちっちゃい頃、公園のおんこの実(低木だったので多分きゃらぼくの実)をよく取って食べていた。`,
         gazo: [""],
-        tagu: ["草木","実","漢字"],
+        tagu: ["草木","実","漢字","親"],
         hiduke: "2025-09-12"
     },
     {
@@ -491,9 +527,23 @@ const wordData = [
     }
 ];
 
-// ★ 選択中(含む)と除外中のタグをそれぞれ保存
+// const wordData = [ ... ];
+// (この上に単語データを記述してください)
+
 let includeTags = new Set();
 let excludeTags = new Set();
+
+// 文字を正規化（統一）する関数
+function normalizeString(str) {
+    if (!str) return '';
+    let normalized = str;
+    // 全角英数字記号を半角に
+    normalized = normalized.replace(/[！-～]/g, s => String.fromCharCode(s.charCodeAt(0) - 0xFEE0));
+    // カタカナをひらがなに
+    normalized = normalized.replace(/[\u30a1-\u30f6]/g, s => String.fromCharCode(s.charCodeAt(0) - 0x60));
+    // 小文字に統一
+    return normalized.toLowerCase();
+}
 
 // ページの読み込みが完了したら実行
 window.onload = function() {
@@ -513,10 +563,7 @@ function createWordEntryElement(data, entryId) {
     entryDiv.id = entryId;
     entryDiv.dataset.term = data.kotoba;
 
-    // まず画像エリアのコンテナを生成
     let imagesHtml = '<div class="word-image">';
-
-    // gazoが空配列や空文字でない場合のみ、中身(リンクやimgタグ)を生成
     if (data.gazo && data.gazo.length > 0 && data.gazo[0] !== "") {
         const imageLinks = data.gazo.map((imgSrc, i) =>
             `<span class="image-toggler" data-img-id="${entryId}-img-${i}">${imgSrc.replace('gazo/', '')}</span>`
@@ -524,14 +571,11 @@ function createWordEntryElement(data, entryId) {
         const imageTags = data.gazo.map((imgSrc, i) =>
             `<img src="${imgSrc}" alt="${data.kotoba.replace(/<[^>]*>/g, '')}" id="${entryId}-img-${i}" style="display: none;">`
         ).join('');
-        
-        imagesHtml += imageLinks + imageTags; // 生成した中身を追加
+        imagesHtml += imageLinks + imageTags;
     }
-    
-    imagesHtml += '</div>'; // コンテナを閉じる
+    imagesHtml += '</div>';
 
     const dateHtml = data.hiduke ? `<div class="registered-date">登録日: ${data.hiduke}</div>` : '';
-
     let tagsHtml = '';
     if (data.tagu && data.tagu.length > 0) {
         tagsHtml = `<div class="registered-date">タグ: ${data.tagu.join(', ')}</div>`;
@@ -554,19 +598,14 @@ function createWordEntryElement(data, entryId) {
 function findAndReplaceWithLinks(element, currentTerm) {
     const linkableTerms = [];
     const tempDiv = document.createElement('div');
-
     wordData.forEach(linkTargetEntry => {
         if (linkTargetEntry.kotoba === currentTerm) return;
-        
         const plainTerm = linkTargetEntry.kotoba.replace(/<rt>.*?<\/rt>/g, '').replace(/<[^>]*>/g, '');
-        
         plainTerm.split(/[\s　]+/).filter(p => p).forEach(part => {
             linkableTerms.push({ text: part, originalTerm: linkTargetEntry.kotoba });
         });
     });
-
     linkableTerms.sort((a, b) => b.text.length - a.text.length);
-    
     const walker = document.createTreeWalker(element, NodeFilter.SHOW_TEXT);
     const nodesToProcess = [];
     while (walker.nextNode()) {
@@ -575,16 +614,13 @@ function findAndReplaceWithLinks(element, currentTerm) {
             nodesToProcess.push(walker.currentNode);
         }
     }
-    
     nodesToProcess.forEach(node => {
         const text = node.nodeValue;
         const fragment = document.createDocumentFragment();
         let lastIndex = 0;
-
         for (let i = 0; i < text.length; i++) {
             const remainingText = text.substring(i);
             const matchedLink = linkableTerms.find(link => remainingText.startsWith(link.text));
-            
             if (matchedLink) {
                 if (i > lastIndex) {
                     fragment.appendChild(document.createTextNode(text.substring(lastIndex, i)));
@@ -594,16 +630,13 @@ function findAndReplaceWithLinks(element, currentTerm) {
                 linkNode.dataset.term = matchedLink.originalTerm;
                 linkNode.textContent = matchedLink.text;
                 fragment.appendChild(linkNode);
-                
                 i += matchedLink.text.length - 1;
                 lastIndex = i + 1;
             }
         }
-        
         if (lastIndex < text.length) {
             fragment.appendChild(document.createTextNode(text.substring(lastIndex)));
         }
-        
         if (fragment.childNodes.length > 1 || (fragment.firstChild && fragment.firstChild.nodeType !== Node.TEXT_NODE)) {
             node.parentNode.replaceChild(fragment, node);
         }
@@ -613,16 +646,13 @@ function findAndReplaceWithLinks(element, currentTerm) {
 function displayWords(words) {
     const container = document.getElementById('word-container');
     container.innerHTML = '';
-    
     const elementsToAppend = [];
     words.forEach(data => {
         const uniqueIdPart = data.kotoba.replace(/<[^>]*>|\s|　/g, '');
         const element = createWordEntryElement(data, `word-entry-${uniqueIdPart}`);
         elementsToAppend.push(element);
     });
-
     elementsToAppend.forEach(el => container.appendChild(el));
-    
     elementsToAppend.forEach(el => {
         const currentTerm = el.dataset.term;
         const defElement = el.querySelector('.word-definition');
@@ -632,11 +662,10 @@ function displayWords(words) {
 
 function updateDisplay() {
     const searchBox = document.getElementById('search-box');
-    const query = searchBox.value.trim().toLowerCase();
+    const query = normalizeString(searchBox.value.trim());
     
     let filteredData = wordData;
 
-    // 選択(含む)タグでの絞り込み
     if (includeTags.size > 0) {
         const tagsToInclude = Array.from(includeTags);
         filteredData = filteredData.filter(item => 
@@ -644,7 +673,6 @@ function updateDisplay() {
         );
     }
 
-    // 除外タグでの絞り込み
     if (excludeTags.size > 0) {
         const tagsToExclude = Array.from(excludeTags);
         filteredData = filteredData.filter(item => 
@@ -652,22 +680,18 @@ function updateDisplay() {
         );
     }
 
-    // 検索キーワードでの絞り込み
     if (query) {
         const tempDiv = document.createElement('div');
         filteredData = filteredData.filter(data => {
             tempDiv.innerHTML = data.kotoba;
-            const plainTerm = tempDiv.textContent.toLowerCase();
+            const plainTerm = normalizeString(tempDiv.textContent);
             tempDiv.innerHTML = data.imi;
-            const plainDefinition = tempDiv.textContent.toLowerCase();
+            const plainDefinition = normalizeString(tempDiv.textContent);
             return plainTerm.includes(query) || plainDefinition.includes(query);
         });
     }
 
-    // 登録日でソート
     filteredData.sort((a, b) => new Date(b.hiduke) - new Date(a.hiduke));
-
-    // 最終結果を表示
     displayWords(filteredData);
 }
 
@@ -678,40 +702,22 @@ function setupEventListeners() {
 
     searchBox.addEventListener('keydown', function(event) {
         if (event.key === 'Enter') {
-            const query = event.target.value.trim().toLowerCase();
+            const query = normalizeString(event.target.value.trim()); // 正規化して使用
             if (query && WEB_APP_URL) {
                 fetch(WEB_APP_URL, {
                     method: 'POST',
                     mode: 'no-cors',
                     headers: { 'Content-Type': 'application/json' },
-                    // type: 'search' を指定
                     body: JSON.stringify({ type: 'search', content: query }),
                 })
                 .catch(error => console.error('Error sending search query:', error));
             }
-
-            // --- 表示の絞り込み処理（変更なし） ---
-            if (!query) {
-                wordData.sort((a, b) => new Date(b.hiduke) - new Date(a.hiduke));
-                displayWords(wordData);
-                return;
-            }
-            const tempDiv = document.createElement('div');
-            const filteredData = wordData.filter(data => {
-                tempDiv.innerHTML = data.kotoba;
-                const plainTerm = tempDiv.textContent.toLowerCase();
-                tempDiv.innerHTML = data.imi;
-                const plainDefinition = tempDiv.textContent.toLowerCase();
-                return plainTerm.includes(query) || plainDefinition.includes(query);
-            });
-            filteredData.sort((a, b) => new Date(b.hiduke) - new Date(a.hiduke));
-            displayWords(filteredData);
+            updateDisplay(); // 表示更新のみを行う
         }
     });
 
     container.addEventListener('click', function(event) {
         const target = event.target;
-
         if (target.classList.contains('image-toggler')) {
             const imgId = target.dataset.imgId;
             const imgElement = document.getElementById(imgId);
@@ -720,14 +726,12 @@ function setupEventListeners() {
                 target.classList.toggle('active');
             }
         }
-
         if (target.classList.contains('internal-link')) {
             const term = target.dataset.term;
             const parentEntry = target.closest('.word-entry');
             const uniqueIdPart = term.replace(/<[^>]*>|\s|　/g, '');
             const entryId = `inserted-${uniqueIdPart}`;
             const existingEntry = document.getElementById(entryId);
-            
             if (existingEntry) {
                 existingEntry.remove();
             } else {
@@ -769,17 +773,14 @@ function displayTags() {
             const isExcluded = excludeTags.has(tag);
 
             if (!isIncluded && !isExcluded) {
-                // 通常 -> 選択
                 includeTags.add(tag);
                 tagBtn.classList.add('active');
             } else if (isIncluded) {
-                // 選択 -> 除外
                 includeTags.delete(tag);
                 excludeTags.add(tag);
                 tagBtn.classList.remove('active');
                 tagBtn.classList.add('exclude');
             } else if (isExcluded) {
-                // 除外 -> 通常
                 excludeTags.delete(tag);
                 tagBtn.classList.remove('exclude');
             }
