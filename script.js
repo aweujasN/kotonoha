@@ -59,7 +59,7 @@ const wordData = [
     {
         kotoba: `あおさぎ　青鷺　蒼鷺`,
         imi: `河川や湖沼、湿原、干潟、水田などに生息する大型の鳥。翼開長160cm。<br>眉の辺りから後頭にかけてや頸に黒い筋模様がある。翼を広げると、深い青灰色をした羽の先が見られる。<br>爬虫類、両生類、魚類、節足動物などを食べる。コロニーを形成し営巣する。<br>ペリカン目なので頭は多分悪い。`,
-        gazo: ["gazo/aosagi.png","gazo/aosagi2.png"],
+        gazo: ["gazo/aosagi.jpg","gazo/aosagi2.jpg"],
         tagu: ["鳥","漢字"],
         hiduke: "2025-09-30"
     },
@@ -810,3 +810,4 @@ function createTagButton(text) {
     return button;
 
 }
+
