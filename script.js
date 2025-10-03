@@ -1,5 +1,12 @@
 const wordData = [
     {
+        kotoba: `四囙囜㘞龱㘝回团囱囪𡆤𡆥𡆦囚囦困囡囝因国固囹囸囻囼㘠㘡图园囯囨圄圁圉𡈹田日𡆠圓𫭏囮`,
+        imi: `囙㘞㘝目龱回龱回囯囡日囚㘝四㘝四<br>图目囚囻囙回囙回㘞龱𡆦龱𡆦因囯<br>园囡囝因团囜囙囦困囨圉`,
+        gazo: [""],
+        tagu: ["漢字"],
+        hiduke: "2025-10-03"
+    },
+    {
         kotoba: `耳朶`,
         imi: `みみたぶ。じだ。`,
         gazo: [""],
@@ -831,6 +838,7 @@ function createTagButton(text) {
     return button;
 
 }
+
 
 
 
