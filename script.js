@@ -1,5 +1,12 @@
 const wordData = [
     {
+        kotoba: `しょうきずいせん　鍾馗水仙`,
+        imi: `言ってしまえば黄色の彼岸花。花期は9月から10月頃。`,
+        gazo: ["gazo/20251019shoukizuisen.jpg"],
+        tagu: ["花","写真撮った"],
+        hiduke: "2025-10-23"
+    },
+    {
         kotoba: `にちにちそう　日々草`,
         imi: `coming soon`,
         gazo: ["gazo/20250927nichinichisou.jpg"],
